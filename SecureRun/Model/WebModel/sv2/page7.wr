@@ -1,0 +1,81 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="750" id="sv2#page7" name="Add profile" landmark="true" layout:pageLayout="SecureRunStyle/AddProfile">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="194" id="sv2#page7#enu5" name="New profile" linkOrder="sv2#page7#enu5#ln32 sv2#page7#enu5#ln23" fieldOrder="sv2#page7#enu5#fld13 sv2#page7#enu5#sfld2 sv2#page7#enu5#sfld3 sv2#page7#enu5#fld15 sv2#page7#enu5#fld16 sv2#page7#enu5#fld17 sv2#page7#enu5#fld18 sv2#page7#enu5#fld19">
+      <Field id="sv2#page7#enu5#fld13" name="Profile Name" type="string" modifiable="true">
+        <VRules/>
+      </Field>
+      <Field id="sv2#page7#enu5#fld15" name="Beep" type="boolean" modifiable="true">
+        <VRules/>
+      </Field>
+      <Field id="sv2#page7#enu5#fld16" name="Vibration" type="boolean" modifiable="true">
+        <VRules/>
+      </Field>
+      <Field id="sv2#page7#enu5#fld17" name="Notification" type="boolean" modifiable="true">
+        <VRules/>
+      </Field>
+      <Field id="sv2#page7#enu5#fld18" name="Beep times" type="integer" modifiable="true">
+        <VRules/>
+      </Field>
+      <Field id="sv2#page7#enu5#fld19" name="Timeout" type="integer" modifiable="true">
+        <VRules/>
+      </Field>
+      <Link id="sv2#page7#enu5#ln23" name="Add profile" to="sv2#inn6" type="normal" validate="true">
+        <LinkParameter id="sv2#page7#enu5#ln23#par83" name="Profile Name_Input" source="sv2#page7#enu5#fld13" target="sv2#inn6.isnotnull"/>
+        <LinkParameter id="sv2#page7#enu5#ln23#par93" name="Beep times_PASSING" source="sv2#page7#enu5#fld18" passing="true"/>
+        <LinkParameter id="sv2#page7#enu5#ln23#par96" name="Number_PASSING" source="sv2#page7#enu5#sfld3" passing="true"/>
+        <LinkParameter id="sv2#page7#enu5#ln23#par97" name="Timeout_PASSING" source="sv2#page7#enu5#fld19" passing="true"/>
+      </Link>
+      <Link id="sv2#page7#enu5#ln32" name="Cancel" to="sv2#page5" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="93,-122,-67,137"/>
+      <SelectionField id="sv2#page7#enu5#sfld2" name="Contact Name" type="string"/>
+      <SelectionField id="sv2#page7#enu5#sfld3" type="string" name="Number">
+        <VRules/>
+      </SelectionField>
+      <Link id="sv2#page7#enu5#ln9" name="Link9" to="sv2#cru2" type="transport" validate="true" gr:bendpoints="1,-143,-303,0">
+        <LinkParameter id="sv2#page7#enu5#ln9#par84" name="Beep_Beep" source="sv2#page7#enu5#fld15" target="sv2#cru2.ent1#att3"/>
+        <LinkParameter id="sv2#page7#enu5#ln9#par85" name="Beep times_Beep_times" source="sv2#page7#enu5#fld18" target="sv2#cru2.ent1#att8"/>
+        <LinkParameter id="sv2#page7#enu5#ln9#par86" name="Profile Name_Name" source="sv2#page7#enu5#fld13" target="sv2#cru2.ent1#att2"/>
+        <LinkParameter id="sv2#page7#enu5#ln9#par87" name="Notification_Notification" source="sv2#page7#enu5#fld17" target="sv2#cru2.ent1#att5"/>
+        <LinkParameter id="sv2#page7#enu5#ln9#par88" name="Number_Number" source="sv2#page7#enu5#sfld3" target="sv2#cru2.ent1#att6"/>
+        <LinkParameter id="sv2#page7#enu5#ln9#par89" name="Timeout_Timeout" source="sv2#page7#enu5#fld19" target="sv2#cru2.ent1#att7"/>
+        <LinkParameter id="sv2#page7#enu5#ln9#par90" name="Vibration_Vibration" source="sv2#page7#enu5#fld16" target="sv2#cru2.ent1#att4"/>
+      </Link>
+    </EntryUnit>
+    <GetUnit id="sv2#page7#gtu4" name="GetUser" gr:x="16" gr:y="0" contextParameters="UserCtxParam">
+      <Link id="sv2#page7#gtu4#ln21" name="Link13" to="sv2#cru2" type="transport" automaticCoupling="true" validate="true"/>
+    </GetUnit>
+    <MultiMessageUnit gr:x="10" gr:y="104" id="sv2#page7#mssu6"/>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#page7#mssu6"/>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#page7#enu5">
+          <layout:Field field="sv2#page7#enu5#fld13"/>
+          <layout:Field field="sv2#page7#enu5#sfld2"/>
+          <layout:Field field="sv2#page7#enu5#sfld3"/>
+          <layout:Field field="sv2#page7#enu5#fld15"/>
+          <layout:Field field="sv2#page7#enu5#fld16"/>
+          <layout:Field field="sv2#page7#enu5#fld17"/>
+          <layout:Field field="sv2#page7#enu5#fld18"/>
+          <layout:Field field="sv2#page7#enu5#fld19"/>
+          <layout:Link link="sv2#page7#enu5#ln32"/>
+          <layout:Link link="sv2#page7#enu5#ln23"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="boolean-field-rendering" value="checkbox" type="field"/>
+</Page>

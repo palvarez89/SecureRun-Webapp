@@ -1,0 +1,61 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="Public" homePage="sv1#page1">
+  <OperationUnits>
+    <LoginUnit gr:x="260" gr:y="60" id="sv1#lgu1" name="DoLogin">
+      <KOLink id="sv1#lgu1#kln1" name="KOLink1" to="sv1#page1#mssu1">
+        <LinkParameter id="sv1#lgu1#kln1#par3" name="Error in username or password_Shown Messages" sourceValue="Error in username or password" target="sv1#page1#mssu1.shownMessages"/>
+      </KOLink>
+    </LoginUnit>
+    <CreateUnit gr:x="800" gr:y="270" id="sv1#cru1" name="NewUser" entity="User">
+      <OKLink id="sv1#cru1#oln1" name="OKLink1" to="sv1#page1#mssu1" gr:bendpoints="9,-135,700,2">
+        <LinkParameter id="sv1#cru1#oln1#par30" name="User created_Shown Messages" sourceValue="User created" target="sv1#page1#mssu1.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv1#cru1#kln2" name="KOLink2" to="sv1#page2#mssu2" gr:bendpoints="-9,90,672,-3">
+        <LinkParameter id="sv1#cru1#kln2#par31" name="User not created_Shown Messages" sourceValue="User not created" target="sv1#page2#mssu2.shownMessages"/>
+      </KOLink>
+    </CreateUnit>
+    <IsNotNullUnit gr:x="340" gr:y="220" id="sv1#inn1" name="ExistEmail?">
+      <OKLink id="sv1#inn1#oln4" name="OKLink4" to="sv1#page2#mssu2" gr:bendpoints="10,114,286,-25;-29,126,237,-23">
+        <LinkParameter id="sv1#inn1#oln4#par9" name="Email already registred_Shown Messages" sourceValue="Email already registred" target="sv1#page2#mssu2.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv1#inn1#kln3" name="KOLink3" to="sv1#seu3">
+        <LinkParameter id="sv1#inn1#kln3#par19" name="userName_PASSING_Username_att" sourceLinkParameter="sv1#seu2#oln3#par18" target="sv1#seu3#su2#acond2"/>
+        <LinkParameter id="sv1#inn1#kln3#par20" name="email_PASSING" sourceLinkParameter="sv1#seu2#oln3#par16" passing="true"/>
+        <LinkParameter id="sv1#inn1#kln3#par21" name="password_PASSING" sourceLinkParameter="sv1#seu2#oln3#par17" passing="true"/>
+        <LinkParameter id="sv1#inn1#kln3#par22" name="userName_PASSING" sourceLinkParameter="sv1#seu2#oln3#par18" passing="true"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <SelectorUnit gr:x="220" gr:y="210" id="sv1#seu2" name="SearchEmail" entity="User">
+      <Selector id="sv1#seu2#su1" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv1#seu2#su1#acond1" name="email_Att" predicate="eq" booleanOperator="or" implied="false" attributes="email"/>
+      </Selector>
+      <OKLink id="sv1#seu2#oln3" name="OKLink3" to="sv1#inn1">
+        <LinkParameter id="sv1#seu2#oln3#par8" name="oid_Input" source="userOIDArray" target="sv1#inn1.isnotnull"/>
+        <LinkParameter id="sv1#seu2#oln3#par16" name="email_PASSING" sourceLinkParameter="sv1#page2#enu2#ln3#par13" passing="true"/>
+        <LinkParameter id="sv1#seu2#oln3#par17" name="password_PASSING" sourceLinkParameter="sv1#page2#enu2#ln3#par14" passing="true"/>
+        <LinkParameter id="sv1#seu2#oln3#par18" name="userName_PASSING" sourceLinkParameter="sv1#page2#enu2#ln3#par15" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <SelectorUnit gr:x="480" gr:y="210" id="sv1#seu3" name="SearchUsername" entity="User">
+      <Selector id="sv1#seu3#su2" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv1#seu3#su2#acond2" name="Username_att" predicate="eq" booleanOperator="or" implied="false" attributes="userName"/>
+      </Selector>
+      <OKLink id="sv1#seu3#oln5" name="OKLink5" to="sv1#inn2">
+        <LinkParameter id="sv1#seu3#oln5#par11" name="oid_Input" source="userOIDArray" target="sv1#inn2.isnotnull"/>
+        <LinkParameter id="sv1#seu3#oln5#par23" name="email_PASSING" sourceLinkParameter="sv1#inn1#kln3#par20" passing="true"/>
+        <LinkParameter id="sv1#seu3#oln5#par24" name="password_PASSING" sourceLinkParameter="sv1#inn1#kln3#par21" passing="true"/>
+        <LinkParameter id="sv1#seu3#oln5#par25" name="userName_PASSING" sourceLinkParameter="sv1#inn1#kln3#par22" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="630" gr:y="220" id="sv1#inn2" name="ExistUsername?">
+      <OKLink id="sv1#inn2#oln6" name="OKLink6" to="sv1#page2#mssu2" gr:bendpoints="5,120,573,-29">
+        <LinkParameter id="sv1#inn2#oln6#par12" name="Username already exists._Shown Messages" sourceValue="Username already exists." target="sv1#page2#mssu2.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv1#inn2#kln4" name="KOLink4" to="sv1#cru1">
+        <LinkParameter id="sv1#inn2#kln4#par26" name="email_PASSING_email" sourceLinkParameter="sv1#seu3#oln5#par23" target="sv1#cru1.email"/>
+        <LinkParameter id="sv1#inn2#kln4#par27" name="1_Group.oid(defaultGroup)" sourceValue="1" target="sv1#cru1.User2DefaultGroup.groupOID"/>
+        <LinkParameter id="sv1#inn2#kln4#par28" name="password_PASSING_password" sourceLinkParameter="sv1#seu3#oln5#par24" target="sv1#cru1.password"/>
+        <LinkParameter id="sv1#inn2#kln4#par29" name="userName_PASSING_userName" sourceLinkParameter="sv1#seu3#oln5#par25" target="sv1#cru1.userName"/>
+      </KOLink>
+    </IsNotNullUnit>
+  </OperationUnits>
+</SiteView>

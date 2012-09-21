@@ -1,0 +1,30 @@
+[10 sep 2012 17:34:15] DEBUG Executing SQL script
+[10 sep 2012 17:34:15] INFO ================================================================================
+[10 sep 2012 17:34:15] INFO outputPath= 'D:\universidad\quinto\PFC\workspaceWebratio\SecureRun\.Temp~\UpdateSQL.xml'
+[10 sep 2012 17:34:15] INFO onError= 'continue'
+[10 sep 2012 17:34:15] INFO statementSeparator= ';'
+[10 sep 2012 17:34:15] INFO derby.system.home= 'D:\universidad\quinto\PFC\workspaceWebratio\.metadata\.plugins\com.webratio.commons.db\derby'
+[10 sep 2012 17:34:15] INFO password= '1234'
+[10 sep 2012 17:34:15] INFO url= 'jdbc:postgresql://localhost:5432/SecureRun'
+[10 sep 2012 17:34:15] INFO username= 'postgres'
+[10 sep 2012 17:34:15] INFO autoCommit= 'false'
+[10 sep 2012 17:34:15] INFO outputLogPath= 'D:\universidad\quinto\PFC\workspaceWebratio\SecureRun\.Temp~\UpdateSQL.xml.log'
+[10 sep 2012 17:34:15] INFO driverClass= 'org.postgresql.Driver'
+[10 sep 2012 17:34:15] INFO encoding= ''
+[10 sep 2012 17:34:15] INFO eventSocketPort= '50436'
+[10 sep 2012 17:34:15] INFO sqlScript= 'D:\universidad\quinto\PFC\workspaceWebratio\SecureRun\.Temp~\UpdateSQL.sql'
+[10 sep 2012 17:34:15] INFO ================================================================================
+[10 sep 2012 17:34:15] INFO Connecting to the Database...
+[10 sep 2012 17:34:15] INFO Database connection estabilished
+[10 sep 2012 17:34:15] INFO transaction isolation: 2
+[10 sep 2012 17:34:15] DEBUG ================================================================================
+[10 sep 2012 17:34:15] DEBUG Executing SQL script file: D:\universidad\quinto\PFC\workspaceWebratio\SecureRun\.Temp~\UpdateSQL.sql
+[10 sep 2012 17:34:15] DEBUG Executing statement:  alter table "public"."profile"  add column  "beep_2"  bool
+[10 sep 2012 17:34:15] DEBUG Executing statement:  alter table "public"."profile"  add column  "vibration_2"  bool
+[10 sep 2012 17:34:15] DEBUG Executing statement:  alter table "public"."profile"  add column  "notification_2"  bool
+[10 sep 2012 17:34:15] DEBUG Executing statement:  alter table "public"."profile"  add column  "timeout_2"  int4
+[10 sep 2012 17:34:15] DEBUG Executing statement:  alter table "public"."profile"  add column  "beep_times_2"  int4
+[10 sep 2012 17:34:15] DEBUG ================================================================================
+[10 sep 2012 17:34:15] DEBUG SQL SCRIPT SUCCESSFULLY EXECUTED
+[10 sep 2012 17:34:15] INFO Database connection closed
+[10 sep 2012 17:34:15] DEBUG Total time: 204 milliseconds

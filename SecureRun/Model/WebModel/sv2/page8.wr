@@ -1,0 +1,30 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="410" gr:y="270" id="sv2#page8" name="Done">
+  <ContentUnits>
+    <MultiMessageUnit gr:x="0" gr:y="0" id="sv2#page8#mssu5" linkOrder="sv2#page8#mssu5#ln7">
+      <Message xml:space="preserve">SMS SEND</Message>
+      <Link id="sv2#page8#mssu5#ln7" name="RESTART" to="sv2#page3" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-308,-14,1,218"/>
+    </MultiMessageUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#page8#mssu5">
+          <layout:Link link="sv2#page8#mssu5#ln7"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:UnitConfiguration unitType="MultiMessageUnit" layout:unitLayout="SecureRunStyle/Done"/>
+</Page>

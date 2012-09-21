@@ -1,0 +1,39 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter label="Use Empty Unit Message" name="use-empty-unit-message" type="boolean" default="false">
+Defines the usage of a message for empty units.
+Allowed values are: true(default) or false.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Empty Unit Message" name="empty-unit-message" type="string" default="emptyUnitMessage">
+Defines the key of the message to use if the unit is empty.
+Default value: emptyUnitMessage
+</wr:LayoutParameter>
+
+	<wr:Frame>
+
+			<div class="plain DataUnit bs-docs-example">
+				<table class="table table-condensed table-bordered">
+					<wr:Iterate var="attr" context="unit" select="layout:Attribute">
+						<wr:Visible>
+							<tr>
+								<td valign="top" class="<wr:StyleClass/> header">
+									<b><wr:Label/></b>
+								</td>
+								<td valign="top" id= "id<wr:Label/>"class="<wr:StyleClass/> value"><wr:Value/></td>
+							</tr>
+						</wr:Visible>
+					</wr:Iterate>
+
+						
+
+				</table>
+				<div class="row">
+				
+						<wr:Iterate var="link" context="unit" select="layout:Link">
+							<wr:Visible>
+								<div><wr:Link class="link btn btn-primary btn-block"/></div>
+							</wr:Visible>
+						</wr:Iterate>
+				</div>
+			</div>
+
+	</wr:Frame>

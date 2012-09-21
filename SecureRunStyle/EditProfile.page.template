@@ -1,0 +1,175 @@
+#?delimiters [%, %], [%=, %] <!-- delimiters for Groovy scriplets -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+[%setHTMLOutput()%]
+<!-- libraries used in the page -->
+<%@ taglib prefix="bean" uri="http://struts.apache.org/tags-bean" %> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>  
+<%@ taglib prefix="html" uri="http://struts.apache.org/tags-html" %> 
+<%@ taglib prefix="webratio" uri="http://www.webratio.com/2006/TagLib/JSP20" %> 
+<%@ taglib prefix="FCK" uri="http://fckeditor.net/tags-fckeditor"  %> 
+<%@ page contentType="text/html; charset=UTF-8"%> 
+
+<webratio:Page page="<wr:PageId/>"/> <!-- declaration of the page -->
+<html>
+<head>
+  <title><wr:PageTitle/></title> <!-- prints the page title, the name of the page in the model -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <!-- <wr:LinkedResources/> --><!-- links to CSS or JS resources declared in the project -->
+  <!-- Bootstrap -->
+    <link href="SecureRunStyle/css/bootstrap.min.css" rel="stylesheet">
+	<style type="text/css">
+	    body {
+	        padding-top: 60px;
+	        padding-bottom: 40px;
+	    }
+	    .sidebar-nav {
+	        padding: 9px 0;
+	    }
+	    /* ----------- Checkbox */
+	    input[type="checkbox"] {
+	        -webkit-appearance:none;
+	        /* Remove Safari default */
+	        outline: none;
+	        width: 96px;
+	        height: 32px;
+	        cursor: pointer;
+	        position: relative;
+	        border-radius: 60px;
+	        background-color: #333;
+	        -webkit-background-clip: padding-box;
+	        border: 0;
+	    }
+	    input[type="checkbox"]:before, input[type="checkbox"]:after {
+	        font: bold 16px/30px sans-serif;
+	        cursor: pointer;
+	        text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+	        text-align: center;
+	        position: absolute;
+	        z-index: 1;
+	        width: 32px;
+	        height: 30px;
+	        top: 1px;
+	        border: 0;
+	    }
+	    input[type="checkbox"]:after {
+	        content: attr(data-icon1);
+	        left: 1px;
+	        border-radius: 60px 0 0 60px;
+	    }
+	    input[type="checkbox"]:before {
+	        content: attr(data-icon2);
+	        right: 1px;
+	        border-radius: 0 60px 60px 0;
+	    }
+	    /* ----------- checked/unchecked */
+	    /* unchecked */
+	    input[type="checkbox"] {
+	        background: #fff;
+	    }
+	    input[type="checkbox"]:after {
+	        background: #fff;
+	    }
+	    /* checked */
+	    input[type="checkbox"]:checked:after {
+	        background: #39c;
+	        color: #fff;
+	    }
+	    /* ----------- active/inactve */
+	    /* Active */
+	    input[type="checkbox"]:before, input[type="checkbox"]:checked:after {
+	        color: #fff;
+	        z-index: 2;
+	        text-indent: 0;
+	        box-shadow: inset 0 0 3px 2px rgba(0, 0, 0, .1), inset 0 15px 0 rgba(0, 0, 0, .1);
+	        width: 70px;
+	        z-index: 0;
+	    }
+	    input[type="checkbox"]:before {
+	        padding-left: 10px;
+	        color: #666;
+	        text-shadow: 0 1px 0 rgba(255, 255, 255, .9);
+	    }
+	    input[type="checkbox"]:checked:after {
+	        padding-right: 20px;
+	    }
+	    /* Inactive */
+	    input[type="checkbox"]:after, input[type="checkbox"]:checked:before {
+	        background: #fff;
+	        text-indent: -9999px;
+	        border-radius: 60px;
+	        z-index: 99;
+	        width: 30px;
+	        height: 28px;
+	        box-shadow: inset 0 -10px 10px rgba(0, 0, 0, .2), inset 0 1px 2px rgba(255, 255, 255, 1);
+	        border: 1px solid #888;
+	        padding: 0;
+	    }
+	</style>
+    <link href="SecureRunStyle/css/bootstrap-responsive.css" rel="stylesheet">
+    <script type="text/javascript" charset="utf-8" src="scripts/cordova.dolphin.js"></script>
+	 <script data-main="mainContactsEdit" src="scripts/require.js"></script>
+	 	<script>
+			function cargado() {
+				if (document.querySelectorAll){
+					var checkboxes=document.querySelectorAll('input[type="checkbox"]')
+					for (var i=0; i<checkboxes.length; i++){
+						checkboxes[i].setAttribute('data-icon1', 'ON');
+						checkboxes[i].setAttribute('data-icon2', 'OFF');
+					}
+					return false;
+				}
+			
+			}
+		</script>
+</head>
+<body onload="cargado();cargarcontactos()">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="SecureRunStyle/js/bootstrap.min.js"></script>
+<wr:PageForm> <!-- adds a global form if the page includes at least one form-based unit -->
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#"><wr:PageTitle/></a>
+          <div class="nav-collapse collapse" style="height: 0px; ">
+            <ul class="nav">
+            <wr:LandmarkPageMenu level="1"> <!-- iterates over top-level landmark pages -->
+              <li><wr:Link/></li>
+            </wr:LandmarkPageMenu>
+            
+             <wr:LandmarkAreaMenu level="1"> <!-- iterates over top-level landmark areas visible in the current Site View -->
+             	<li><wr:Link/></li>
+             </wr:LandmarkAreaMenu>
+             
+             <wr:LandmarkOperationMenu level="1"> <!-- iterates over all top-level landmark operations visible in the current area -->
+             	<li><wr:Link/></li>
+             </wr:LandmarkOperationMenu>
+             
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    
+
+
+<div class="container-fluid">
+	<div class="row">
+    	<div class="span12">
+      		<wr:Grid/> <!-- specifies where the grid containing units has to be expanded -->
+     	</div>
+	</div>
+</div>
+
+</wr:PageForm>
+</body>
+</html>

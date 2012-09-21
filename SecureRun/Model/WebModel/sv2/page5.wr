@@ -1,0 +1,40 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="170" gr:y="540" id="sv2#page5" name="Manage Profiles" landmark="true" layout:pageLayout="SecureRunStyle/ManageProfiles">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="90" id="sv2#page5#inu1" name="Profiles" entity="ent1" linkOrder="sv2#page5#inu1#ln17 sv2#page5#inu1#ln20" displayAttributes="ent1#att2">
+      <Selector id="sv2#page5#inu1#su4" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#page5#inu1#su4#rcond3" name="Usuario" role="rel1#role1" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#page5#inu1#ln17" name="Show/Edit" to="sv2#seu4" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#page5#inu1#ln20" name="Delete" to="sv2#dlu1" automaticCoupling="true" type="normal" validate="true"/>
+    </IndexUnit>
+    <GetUnit id="sv2#page5#gtu3" name="GetUser" gr:x="0" gr:y="0" contextParameters="UserCtxParam">
+      <Link id="sv2#page5#gtu3#ln15" name="Link13" to="sv2#page5#inu1" type="transport" automaticCoupling="true" validate="true"/>
+    </GetUnit>
+    <MultiMessageUnit gr:x="4" gr:y="204" id="sv2#page5#mssu3"/>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#page5#mssu3"/>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#page5#inu1">
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Link link="sv2#page5#inu1#ln17"/>
+          <layout:Link link="sv2#page5#inu1#ln20"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

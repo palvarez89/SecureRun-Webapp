@@ -1,0 +1,144 @@
+#congrats h3, #errors h3 {
+border-color:black;
+font-family:"Bitstream Vera Sans",sans-serif;
+font-style:normal;
+font-weight:800;
+letter-spacing:normal;
+margin:0pt;
+padding-bottom:0.5em;
+padding-top:0.5em;
+text-decoration:none;
+text-transform:none;
+word-spacing:normal;
+}
+#congrats h3 {
+background-color:#55B05A;
+color:white;
+}
+#congrats p.toggle {
+background:transparent url(../images/arrow-down.gif) no-repeat scroll 15px 0pt;
+text-indent:10px;
+}
+#congrats p.closed {
+background:transparent url(../images/arrow-right.gif) no-repeat scroll 15px 0pt;
+text-indent:10px;
+}
+#warnings table, #errors table {
+border-top:1px solid #CCCCCC !important;
+line-height:120%;
+width:100%;
+}
+#warnings td, #errors td {
+border-width:0pt;
+}
+#errors h4, #warnings h4 {
+background-color:#EEEEEE;
+color:black;
+font-weight:bold;
+margin:1em 0pt 0pt;
+padding:0.2em;
+}
+td.linenumber {
+background-color:#E1E1E1;
+border-bottom:1px solid #CCCCCC !important;
+text-align:right;
+width:3em;
+}
+td.codeContext {
+background-color:#F1F1F1;
+border-bottom:1px solid #DDDDDD !important;
+}
+#errors h2 {
+background-color:#E82848;
+color:white;
+}
+#errors h3 {
+background-color:#D23D24 !important;
+color:white;
+}
+td.message {
+border-bottom:1px solid #FFDDDD !important;
+padding:5px 1em;
+}
+td.nocontext {
+background-color:#F1F1F1;
+border-bottom:1px solid #DDDDDD !important;
+width:3em;
+}
+td.io, td.notfound, td.invalidparam, td.errortoken, td.unknownerror {
+border-bottom:1px solid #FFDDDD !important;
+padding:5px 1em;
+}
+tr.warning {
+padding:0pt;
+}
+td.level1, td.level2, td.level0 {
+border-bottom:1px solid #FFDDDD !important;
+padding:5px 1em;
+}
+.level0 {
+border-left:10px solid #CC6666 !important;
+color:#000000;
+}
+.level1 {
+border-left:10px solid #FA9084 !important;
+color:#000000;
+}
+.level2 {
+border-left:10px solid #FFB1A7 !important;
+color:#000000;
+}
+pre {
+border-left:thin solid #DDDDDD;
+margin-left:30px;
+padding:2em;
+}
+#css {
+}
+.vAtRule {
+font-family:monospace;
+padding:0em;
+}
+.atRule {
+border-left:3px solid #DDDDDD;
+margin:1em 0pt;
+padding-left:0.5em;
+}
+.atSelector {
+}
+.selector {
+background-color:#F1F1F1;
+border-bottom:1px solid #DDDDDD;
+padding:1em;
+}
+.selectorValue {
+font-weight:bold;
+}
+.RuleList {
+padding:0pt 1em;
+}
+.Rule {
+}
+.Property {
+color:#222222;
+font-style:italic;
+}
+.PropertyValue {
+color:#666666;
+}
+p.backtop {
+border-top:1px solid #EEEEFF;
+clear:both;
+color:#BBBBCC;
+font-size:x-small;
+font-weight:bold;
+margin:1em !important;
+padding-right:0pt !important;
+padding-top:0.3em;
+text-align:right;
+text-transform:uppercase;
+}
+p.backtop a:link, p.backtop a:hover, p.backtop a:visited {
+color:#BBBBCC;
+text-decoration:none;
+}

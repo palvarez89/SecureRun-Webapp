@@ -1,0 +1,134 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="USERS" homePage="sv2#page3" landmarks="sv2#page3 sv2#page5 sv2#lou1 sv2#page7" protected="true">
+  <OperationUnits>
+    <LogoutUnit gr:x="40" gr:y="320" id="sv2#lou1" name="End session" siteView="sv1" landmark="true"/>
+    <SelectorUnit gr:x="330" gr:y="630" id="sv2#seu4" name="SelectorUnit4" entity="ent1">
+      <Selector id="sv2#seu4#su5" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#seu4#su5#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#seu4#oln2" name="OKLink2" to="sv2#page6#enu4">
+        <LinkParameter id="sv2#seu4#oln2#par10" name="Beep_Beep" source="ent1#att3Array" target="sv2#page6#enu4#fld8_slot"/>
+        <LinkParameter id="sv2#seu4#oln2#par32" name="Beep_times_Beep_times" source="ent1#att8Array" target="sv2#page6#enu4#fld11_slot"/>
+        <LinkParameter id="sv2#seu4#oln2#par33" name="Name_Name" source="ent1#att2Array" target="sv2#page6#enu4#fld6_slot"/>
+        <LinkParameter id="sv2#seu4#oln2#par34" name="Notification_Notification" source="ent1#att5Array" target="sv2#page6#enu4#fld10_slot"/>
+        <LinkParameter id="sv2#seu4#oln2#par36" name="Timeout_Timeout" source="ent1#att7Array" target="sv2#page6#enu4#fld12_slot"/>
+        <LinkParameter id="sv2#seu4#oln2#par37" name="Vibration_Vibration" source="ent1#att4Array" target="sv2#page6#enu4#fld9_slot"/>
+        <LinkParameter id="sv2#seu4#oln2#par45" name="oid_PASSING" source="ent1#att1Array" passing="true"/>
+        <LinkParameter id="sv2#seu4#oln2#par46" name="ProfileToUser.oid_PASSING" source="rel1#role2_userOIDArray" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <ModifyUnit gr:x="450" gr:y="810" id="sv2#mfu1" name="ModifyProfile" entity="ent1">
+      <Selector id="sv2#mfu1#su6" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#mfu1#su6#kcond2" name="KeyCondition2" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#mfu1#oln7" name="OKLink7" to="sv2#page5#mssu3" gr:bendpoints="-107,-9,148,65">
+        <LinkParameter id="sv2#mfu1#oln7#par50" name="Profile edited successfully_Shown Messages" sourceValue="Profile edited successfully" target="sv2#page5#mssu3.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv2#mfu1#kln5" name="KOLink5" to="sv2#page5#mssu3">
+        <LinkParameter id="sv2#mfu1#kln5#par49" name="Error modifying the profile_Shown Messages" sourceValue="Error modifying the profile" target="sv2#page5#mssu3.shownMessages"/>
+      </KOLink>
+    </ModifyUnit>
+    <DeleteUnit gr:x="50" gr:y="640" id="sv2#dlu1" name="DeleteUnit1" entity="ent1">
+      <Selector id="sv2#dlu1#su7" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#dlu1#su7#kcond3" name="KeyCondition3" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#dlu1#oln8" name="OKLink8" to="sv2#page5#mssu3">
+        <LinkParameter id="sv2#dlu1#oln8#par51" name="Profile deleted_Shown Messages" sourceValue="Profile deleted" target="sv2#page5#mssu3.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv2#dlu1#kln6" name="KOLink6" to="sv2#page5#mssu3" gr:bendpoints="71,63,-81,-33">
+        <LinkParameter id="sv2#dlu1#kln6#par52" name="Profile not deleted_Shown Messages" sourceValue="Profile not deleted" target="sv2#page5#mssu3.shownMessages"/>
+      </KOLink>
+    </DeleteUnit>
+    <CreateUnit gr:x="300" gr:y="880" id="sv2#cru2" name="CreateUnit2" entity="ent1">
+      <OKLink id="sv2#cru2#oln9" name="OKLink9" to="sv2#page5#mssu3">
+        <LinkParameter id="sv2#cru2#oln9#par61" name="Profile created_Shown Messages" sourceValue="Profile created" target="sv2#page5#mssu3.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv2#cru2#kln7" name="KOLink7" to="sv2#page5#mssu3" gr:bendpoints="21,-86,9,81">
+        <LinkParameter id="sv2#cru2#kln7#par60" name="Profile not created_Shown Messages" sourceValue="Profile not created" target="sv2#page5#mssu3.shownMessages"/>
+      </KOLink>
+    </CreateUnit>
+    <IsNotNullUnit gr:x="450" gr:y="180" id="sv2#inn4" name="IsNotNullUnit4">
+      <OKLink id="sv2#inn4#oln11" name="OKLink11" to="sv2#page4#dau1">
+        <LinkParameter id="sv2#inn4#oln11#par77" name="Input Value_KeyCondition4 [oid]" target="sv2#page4#dau1#su8#kcond4.ent1#att1" sourceLinkParameter="sv2#seu5#oln12#par82"/>
+        <LinkParameter id="sv2#inn4#oln11#par81" name="Input Value_PASSING" source="inputValue" passing="true"/>
+      </OKLink>
+      <KOLink id="sv2#inn4#kln9" name="KOLink9" to="sv2#page3#mssu4">
+        <LinkParameter id="sv2#inn4#kln9#par80" name="Please, select a profile._Shown Messages" sourceValue="Please, select a profile." target="sv2#page3#mssu4.shownMessages"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <SelectorUnit gr:x="300" gr:y="170" id="sv2#seu5" name="SelectorUnit5" entity="ent1">
+      <Selector id="sv2#seu5#su9" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#seu5#su9#kcond5" name="KeyCondition5" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#seu5#oln12" name="OKLink12" to="sv2#inn4">
+        <LinkParameter id="sv2#seu5#oln12#par79" name="oid_Input" source="ent1#att2Array" target="sv2#inn4.isnotnull"/>
+        <LinkParameter id="sv2#seu5#oln12#par82" name="Name_PASSING" sourceLinkParameter="sv2#page3#enu3#ln5#par76" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="150" gr:y="980" id="sv2#inn6" name="IsNotNullUnit6" emptyStringAsNull="true">
+      <OKLink id="sv2#inn6#oln13" name="OKLink13" to="sv2#inn7">
+        <LinkParameter id="sv2#inn6#oln13#par99" name="Number_PASSING_Input" sourceLinkParameter="sv2#page7#enu5#ln23#par96" target="sv2#inn7.isnotnull"/>
+        <LinkParameter id="sv2#inn6#oln13#par101" name="Beep times_PASSING" sourceLinkParameter="sv2#page7#enu5#ln23#par93" passing="true"/>
+        <LinkParameter id="sv2#inn6#oln13#par104" name="Timeout_PASSING" sourceLinkParameter="sv2#page7#enu5#ln23#par97" passing="true"/>
+      </OKLink>
+      <KOLink id="sv2#inn6#kln10" name="KOLink10" to="sv2#page7#mssu6">
+        <LinkParameter id="sv2#inn6#kln10#par91" name="Insert a Profile Name_Shown Messages" sourceValue="Insert a Profile Name" target="sv2#page7#mssu6.shownMessages"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <IsNotNullUnit gr:x="290" gr:y="980" id="sv2#inn7" name="IsNotNullUnit7" emptyStringAsNull="true">
+      <OKLink id="sv2#inn7#oln14" name="OKLink14" to="sv2#inn8">
+        <LinkParameter id="sv2#inn7#oln14#par107" name="Beep times_PASSING_Input" sourceLinkParameter="sv2#inn6#oln13#par101" target="sv2#inn8.isnotnull"/>
+        <LinkParameter id="sv2#inn7#oln14#par109" name="Timeout_PASSING" sourceLinkParameter="sv2#inn6#oln13#par104" passing="true"/>
+      </OKLink>
+      <KOLink id="sv2#inn7#kln11" name="KOLink11" to="sv2#page7#mssu6">
+        <LinkParameter id="sv2#inn7#kln11#par100" name="Select a Phone number_Shown Messages" sourceValue="Select a Phone number" target="sv2#page7#mssu6.shownMessages"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <IsNotNullUnit gr:x="410" gr:y="980" id="sv2#inn8" name="IsNotNullUnit8" emptyStringAsNull="true">
+      <OKLink id="sv2#inn8#oln15" name="OKLink15" to="sv2#inn9">
+        <LinkParameter id="sv2#inn8#oln15#par111" name="Timeout_PASSING_Input" sourceLinkParameter="sv2#inn7#oln14#par109" target="sv2#inn9.isnotnull"/>
+      </OKLink>
+      <KOLink id="sv2#inn8#kln12" name="KOLink12" to="sv2#page7#mssu6">
+        <LinkParameter id="sv2#inn8#kln12#par108" name="Please, indicate Beep times_Shown Messages" sourceValue="Please, indicate Beep times" target="sv2#page7#mssu6.shownMessages"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <IsNotNullUnit gr:x="520" gr:y="960" id="sv2#inn9" name="IsNotNullUnit9" emptyStringAsNull="true">
+      <KOLink id="sv2#inn9#kln13" name="KOLink13" to="sv2#page7#mssu6">
+        <LinkParameter id="sv2#inn9#kln13#par110" name="Please, indicate the Timeout value_Shown Messages" sourceValue="Please, indicate the Timeout value" target="sv2#page7#mssu6.shownMessages"/>
+      </KOLink>
+      <OKLink id="sv2#inn9#oln16" name="OKLink16" to="sv2#cru2" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <IsNotNullUnit id="sv2#inn10" name="IsNotNullUnit8" gr:x="730" gr:y="720" emptyStringAsNull="true">
+      <OKLink id="sv2#inn10#oln17" name="OKLink15" to="sv2#inn13">
+        <LinkParameter id="sv2#inn10#oln17#par139" name="Timeout_PASSING_Input" sourceLinkParameter="sv2#inn11#oln18#par136" target="sv2#inn13.isnotnull"/>
+      </OKLink>
+      <KOLink id="sv2#inn10#kln14" name="KOLink12" to="sv2#page6#mssu7">
+        <LinkParameter id="sv2#inn10#kln14#par149" name="Please, indicate beep times_Shown Messages" sourceValue="Please, indicate beep times" target="sv2#page6#mssu7.shownMessages"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <IsNotNullUnit id="sv2#inn11" name="IsNotNullUnit7" gr:x="730" gr:y="640" emptyStringAsNull="true">
+      <OKLink id="sv2#inn11#oln18" name="OKLink14" to="sv2#inn10">
+        <LinkParameter id="sv2#inn11#oln18#par136" name="Timeout_PASSING" sourceLinkParameter="sv2#inn12#oln19#par133" passing="true"/>
+        <LinkParameter id="sv2#inn11#oln18#par138" name="Beep times_PASSING_Input" sourceLinkParameter="sv2#inn12#oln19#par131" target="sv2#inn10.isnotnull"/>
+      </OKLink>
+      <KOLink id="sv2#inn11#kln15" name="KOLink11" to="sv2#page6#mssu7">
+        <LinkParameter id="sv2#inn11#kln15#par148" name="Please, select a Phone number_Shown Messages" sourceValue="Please, select a Phone number" target="sv2#page6#mssu7.shownMessages"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <IsNotNullUnit id="sv2#inn12" name="IsNotNullUnit6" gr:x="740" gr:y="560" emptyStringAsNull="true">
+      <OKLink id="sv2#inn12#oln19" name="OKLink13" to="sv2#inn11">
+        <LinkParameter id="sv2#inn12#oln19#par130" name="Profile Name_PASSING_Input" sourceLinkParameter="sv2#page6#enu4#ln18#par127" target="sv2#inn11.isnotnull"/>
+        <LinkParameter id="sv2#inn12#oln19#par131" name="Beep times_PASSING" sourceLinkParameter="sv2#page6#enu4#ln18#par126" passing="true"/>
+        <LinkParameter id="sv2#inn12#oln19#par133" name="Timeout_PASSING" sourceLinkParameter="sv2#page6#enu4#ln18#par129" passing="true"/>
+      </OKLink>
+      <KOLink id="sv2#inn12#kln16" name="KOLink10" to="sv2#page6#mssu7">
+        <LinkParameter id="sv2#inn12#kln16#par147" name="Please, write a profile name_Shown Messages" sourceValue="Please, write a profile name" target="sv2#page6#mssu7.shownMessages"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <IsNotNullUnit id="sv2#inn13" name="IsNotNullUnit9" gr:x="730" gr:y="800" emptyStringAsNull="true">
+      <KOLink id="sv2#inn13#kln17" name="KOLink13" to="sv2#page6#mssu7">
+        <LinkParameter id="sv2#inn13#kln17#par150" name="Please, indicate the timeout value_Shown Messages" sourceValue="Please, indicate the timeout value" target="sv2#page6#mssu7.shownMessages"/>
+      </KOLink>
+      <OKLink id="sv2#inn13#oln20" name="OKLink16" to="sv2#mfu1" automaticCoupling="true"/>
+    </IsNotNullUnit>
+  </OperationUnits>
+</SiteView>

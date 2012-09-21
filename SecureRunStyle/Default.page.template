@@ -1,0 +1,81 @@
+#?delimiters [%, %], [%=, %] <!-- delimiters for Groovy scriplets -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+[%setHTMLOutput()%]
+<!-- libraries used in the page -->
+<%@ taglib prefix="bean" uri="http://struts.apache.org/tags-bean" %> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>  
+<%@ taglib prefix="html" uri="http://struts.apache.org/tags-html" %> 
+<%@ taglib prefix="webratio" uri="http://www.webratio.com/2006/TagLib/JSP20" %> 
+<%@ taglib prefix="FCK" uri="http://fckeditor.net/tags-fckeditor"  %> 
+<%@ page contentType="text/html; charset=UTF-8"%> 
+
+<webratio:Page page="<wr:PageId/>"/> <!-- declaration of the page -->
+<html>
+<head>
+  <title><wr:PageTitle/></title> <!-- prints the page title, the name of the page in the model -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <!-- <wr:LinkedResources/> --><!-- links to CSS or JS resources declared in the project -->
+  <!-- Bootstrap -->
+    <link href="SecureRunStyle/css/bootstrap.min.css" rel="stylesheet">
+     <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+    </style>
+    <link href="SecureRunStyle/css/bootstrap-responsive.css" rel="stylesheet">
+</head>
+<body>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="SecureRunStyle/js/bootstrap.min.js"></script>
+<wr:PageForm> <!-- adds a global form if the page includes at least one form-based unit -->
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#"><wr:PageTitle/></a>
+          <div class="nav-collapse collapse" style="height: 0px; ">
+            <ul class="nav">
+            <wr:LandmarkPageMenu level="1"> <!-- iterates over top-level landmark pages -->
+              <li><wr:Link/></li>
+            </wr:LandmarkPageMenu>
+            
+             <wr:LandmarkAreaMenu level="1"> <!-- iterates over top-level landmark areas visible in the current Site View -->
+             	<li><wr:Link/></li>
+             </wr:LandmarkAreaMenu>
+             
+             <wr:LandmarkOperationMenu level="1"> <!-- iterates over all top-level landmark operations visible in the current area -->
+             	<li><wr:Link/></li>
+             </wr:LandmarkOperationMenu>
+             
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    
+
+
+<div class="container-fluid">
+	<div class="row">
+    	<div class="span12">
+      		<wr:Grid/> <!-- specifies where the grid containing units has to be expanded -->
+     	</div>
+	</div>
+</div>
+
+</wr:PageForm>
+</body>
+</html>

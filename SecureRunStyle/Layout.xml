@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Layout pageLayout="Default" gridLayout="Default" fieldLayout="Default" frameLayout="Default" loginPage="Default"> 
+  <LinkedResource path="SecureRunStyle/css/units.css"/>  
+  <UnitConfiguration unitType="MultiMessageUnit" unitLayout="Default" frameLayout="Default"/>  
+  <UnitConfiguration unitType="EntryUnit" unitLayout="Default" frameLayout="Default" fieldLayout="Default"/>  
+  <UnitConfiguration unitType="IndexUnit" unitLayout="Default" frameLayout="Default"/> 
+</Layout>
