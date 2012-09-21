@@ -29,11 +29,11 @@ def emptyUnitMessage = params["empty-unit-message"]
 	<wr:Frame>
 		<div class="plain <wr:StyleClass/>">
 			<div class="plain MultiMessageUnit">
-				<table>
+				 <div class="bs-docs-grid">
 					<c:forEach var="current" varStatus="status" items="${<wr:UnitId/>.data}">
 						<c:set var="index" value="${status.index}"/>
-						<tr>
-							<td class="value"><h1>
+						<div class="row-fluid show-grid">
+							<div class="span12"><h1>
 							[% if (contentType == "text/plain") { %]
 								<pre class="<wr:StyleClass/> value"><c:out value="${current}"/></pre>
 							[% } else if (contentType == "text/html") { %]
@@ -41,23 +41,23 @@ def emptyUnitMessage = params["empty-unit-message"]
 							[% } else { %]
 								<c:out value="${current}"/>
 							[% } %]
-							</h1></td>
-						</tr>
+							</h1></div>
+						</div>
 					</c:forEach>
 					[%if(!unit.selectNodes("layout:Link").isEmpty()){%]
-					<tr>
+					<div class="row-fluid show-grid">
 						
 									<wr:Iterate var="link" context="unit" select="layout:Link">
 										<wr:Visible>
-											<td>
+											<div class="span12">
 												<wr:Link class="link btn btn-primary btn-block  btn-large"/>
-											</td>
+											</div>
 										</wr:Visible>
 									</wr:Iterate>
 					
-					</tr>
+					</div>
 					[%}%]
-				</table>
+				</div>
 			</div>
 		</div>
 	</wr:Frame>
