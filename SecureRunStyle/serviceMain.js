@@ -9,6 +9,7 @@ require(["scripts/libreria.js"], function (Libreria) {
 	Libreria.askPermission("NOTIFICATION");
 	Libreria.askPermission("ACCELEROMETER");
 	Libreria.askPermission("GPS");
+	Libreria.geolocation.getCurrentPosition(null);
 });
 
 function roundNumber(num) {
@@ -19,7 +20,7 @@ function roundNumber(num) {
     return result;
 }
 
-var range, number, vibration, notification, beep, beeptimes, timeout, max, array_x, array_y, array_z, i, colisiona, max_valx, min_valx, min_valy, max_valy, min_valz, max_valz, j;
+var gpscoords, range, number, vibration, notification, beep, beeptimes, timeout, max, array_x, array_y, array_z, i, colisiona, max_valx, min_valx, min_valy, max_valy, min_valz, max_valz, j;
 max = 20;
 array_x = [max];
 array_y = [max];
@@ -28,16 +29,29 @@ i = 0;
 colisiona = false;
 
 range = 30;
+
+function sendSucess() {
+	"use strict";
+	window.location = "./page8.do";
+}
+function envioSMS(timeleft) {
+	"use strict";
+	if (timeleft >= 0) {
+		var element = document.getElementById("ln2");
+		element.innerHTML = timeleft + " sec - STOP";
+		timeleft = timeleft - 1;
+		setTimeout('envioSMS(' + timeleft + ')', 1000);
+	} else {
+		require(["scripts/libreria.js"], function (Libreria) {
+			Libreria.device.sendMessage(number, "SecureRun service: Hello, I'am at Lat: " + gpscoords.coords.latitude + " Long: " + gpscoords.coords.longitude, sendSucess);
+		});
+	}
+}
+
 function completado(gps) {
     "use strict";
-    require(["scripts/libreria.js"], function (Libreria) {
-		function sendSucess() {
-            window.location = "./page8.do";
-        }
-		setTimeout(function () {
-			Libreria.device.sendMessage(number, "SecureRun service: Hello, I'am at Lat: " + gps.coords.latitude + " Long: " + gps.coords.longitude, sendSucess);
-		}, timeout * 1000);
-	});
+	gpscoords = gps;
+    envioSMS(timeout);
 }
 
 function whenColision() {
@@ -54,6 +68,7 @@ function whenColision() {
         }
 		var element = document.getElementById("ln2");
 		element.className = "link btn btn-danger btn-block";
+		element.innerHTML = timeout + " sec - STOP";
 		Libreria.geolocation.getCurrentPosition(completado);
     });
 }
