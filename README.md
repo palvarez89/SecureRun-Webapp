@@ -10,3 +10,7 @@ https://play.google.com/store/apps/details?id=org.meshpoint.anode
 For use this plugin is necessary Dolphin HD Browser:
 
 https://play.google.com/store/apps/details?id=mobi.mgeek.TunnyBrowser
+
+Example of use:
+
+http://www.youtube.com/watch?v=GKRneNk9GXM
